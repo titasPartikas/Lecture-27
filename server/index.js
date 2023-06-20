@@ -17,6 +17,7 @@ server.get("/places", async (_, res) => {
   }
 });
 
+// places/taurage/forecast -> { cityCode: "taurage" }
 server.get("/places/:cityCode/forecasts", async (req, res) => {
   try {
     const cityCode = req.params.cityCode;
@@ -31,6 +32,7 @@ server.get("/places/:cityCode/forecasts", async (req, res) => {
   }
 });
 
+// places/taurage/forecast/long-term -> { cityCode: "taurage", forecastType: "long-term" }
 server.get("/places/:cityCode/forecasts/:forecastType", async (req, res) => {
   try {
     const { cityCode, forecastType } = req.params;
